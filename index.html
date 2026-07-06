@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rapid Labs - Health Packages</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f9fa;
+    color:#333;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ==========================
+   LAYOUT
+========================== */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e5e5e5;
+    padding:20px 0;
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:28px;
+    font-weight:600;
+}
+
+header p{
+    font-size:14px;
+    color:#777;
+    margin-top:4px;
+}
+
+/* ==========================
+   PACKAGE CARD
+========================== */
+
+.package{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:20px;
+    align-items:center;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:25px;
+}
+
+.package img{
+    width:100%;
+    max-width:220px;
+    height:180px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.desc{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* ==========================
+   PRICE
+========================== */
+
+.price-wrap{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.price-card{
+    flex:1;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:15px;
+}
+
+.price-card h4{
+    font-size:12px;
+    color:#666;
+    margin-bottom:8px;
+}
+
+.price{
+    font-size:28px;
+    font-weight:600;
+}
+
+.price-card small{
+    display:block;
+    margin-top:6px;
+    color:#777;
+}
+
+/* ==========================
+   TESTS
+========================== */
+
+.tests{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.tests span{
+    border:1px solid #ddd;
+    border-radius:20px;
+    padding:6px 12px;
+    font-size:13px;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.actions{
+    display:flex;
+    gap:10px;
+}
+
+button,
+.btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    text-decoration:none;
+}
+
+button{
+    background:#222;
+    color:#fff;
+}
+
+.btn{
+    background:#0d6efd;
+    color:#fff;
+}
+
+/* ==========================
+   DETAILS
+========================== */
+
+.details{
+    display:none;
+    margin-top:20px;
+}
+
+.item{
+    border:1px solid #e5e5e5;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+.head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px;
+    cursor:pointer;
+}
+
+.body{
+    display:none;
+    padding:0 14px 14px;
+    border-top:1px solid #eee;
+}
+
+.body ul{
+    columns:2;
+    padding-left:18px;
+}
+
+.body li{
+    margin:5px 0;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    .package{
+        grid-template-columns:1fr;
+    }
+
+    .price-wrap{
+        flex-direction:column;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+    button,
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .body ul{
+        columns:1;
+    }
+
+}
+
+.price-offer{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:8px;
+    font-size:14px;
+}
+
+.mrp-price{
+    color:#777;
+    text-decoration:line-through;
+    font-weight:500;
+}
+
+.divider{
+    color:#cfcfcf;
+}
+
+.discount-badge{
+    background:linear-gradient(135deg,#ff4d4d,#d60000);
+    color:#fff;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+    box-shadow:0 3px 8px rgba(214,0,0,.25);
+}
+
+
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>RAPID LABS</h1>
+</div>
+</header>
+
+<div class="container">
+
+<div class="package">
+<img src="master.png" alt="Master Health Checkup">
+<div>
+<h2>Master Health Checkup</h2>
+<p class="desc">Complete preventive health package for routine screening.</p>
+
+
+<div class="price-wrap">
+<div class="price-card">
+<h4>WITHOUT TFT</h4>
+<div class="price">₹1460</div>
+<small>CBC, FBS, LFT, KFT, Lipid, Urine Routine</small>
+<small class="price-offer">
+    <span class="mrp-price">MRP ₹2920</span>
+    <span class="divider">|</span>
+    <span class="discount-badge">50% OFF</span>
+</small>
+</div>
+<div class="price-card">
+<h4>WITH TFT</h4>
+<div class="price">₹1760</div>
+<small>Includes T3, T4 & TSH</small>
+<small class="price-offer">
+    <span class="mrp-price">MRP ₹3520</span>
+    <span class="divider">|</span>
+    <span class="discount-badge">50% OFF</span>
+</small>
+</div>
+</div>
+
+<div class="tests">
+<span>CBC</span><span>FBS</span><span>LFT</span><span>KFT</span>
+<span>Lipid</span><span>Urine Routine</span><span>TFT</span>
+</div>
+
+<div class="actions">
+<button onclick="toggleSection('master')">View Tests</button>
+</div>
+
+<div class="details" id="master">
+</div>
+</div>
+</div>
+
+<div class="package">
+
+    <img src="vitamin.png" alt="Vitamin Health Checkup">
+
+    <div>
+
+        <h2>Vitamin Health Checkup</h2>
+
+        <p class="desc">
+            Essential vitamin screening to identify deficiencies in Vitamin D,
+            Vitamin B12 and Calcium for better bone, nerve and overall health.
+        </p>
+
+        <div class="price-wrap">
+
+            <div class="price-card">
+
+                <h4>PACKAGE PRICE</h4>
+
+                <div class="price">
+                    ₹1329
+                </div>
+
+<small class="price-offer">
+    <span class="mrp-price">MRP ₹2950</span>
+    <span class="divider">|</span>
+    <span class="discount-badge">50% OFF</span>
+</small>
+
+            </div>
+
+        </div>
+
+        <div class="tests">
+
+            <span>Vitamin D</span>
+
+            <span>Vitamin B12</span>
+
+            <span>Calcium</span>
+
+        </div>
+
+        <div class="details" id="vitamin"></div>
+
+    </div>
+
+</div>
+
+
+<div class="details" id="vitamin"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+const masterData={
+"CBC":["Hemoglobin","RBC Count","WBC Count","Platelet Count","PCV","MCV","MCH","MCHC","RDW","MPV","Neutrophils","Lymphocytes","Monocytes","Eosinophils","Basophils"],
+"FBS":["Fasting Blood Sugar"],
+"LFT":["Bilirubin Total","Bilirubin Direct","Bilirubin Indirect","SGOT","SGPT","ALP","Total Protein","Albumin","Globulin"],
+"KFT":["Blood Urea","Creatinine","Uric Acid","Sodium","Potassium","Chloride"],
+"Lipid Profile":["Total Cholesterol","Triglycerides","HDL","LDL","VLDL","HDL / LDL Ratio"],
+"Urine Routine":["Colour","Appearance","Specific Gravity","Protein","Sugar","RBC","Pus Cells","Epithelial Cells","Casts","Crystals","Bacteria"],
+"TFT":["T3","T4","TSH"]
+};
+
+const vitaminData={
+"Vitamin D":["25-Hydroxy Vitamin D"],
+"Vitamin B12":["Vitamin B12"],
+"Calcium":masterData["Calcium"]
+};
+
+function build(id,data){
+ const c=document.getElementById(id);
+ let h="";
+ for(const [t,p] of Object.entries(data)){
+   h+=`<div class="item">
+   <div class="head" onclick="toggleBody(this)"> <strong>${t}</strong><span>+</span></div>
+   <div class="body"><ul>${p.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+   </div>`;
+ }
+ c.innerHTML=h;
+}
+function toggleSection(id){
+ const e=document.getElementById(id);
+ e.style.display=e.style.display==="block"?"none":"block";
+}
+function toggleBody(el){
+ const b=el.nextElementSibling;
+ const s=el.querySelector("span");
+ const open=b.style.display==="block";
+ b.style.display=open?"none":"block";
+ s.textContent=open?"+":"−";
+}
+build("master",masterData);
+build("vitamin",vitaminData);
+</script>
+</body>
+</html>

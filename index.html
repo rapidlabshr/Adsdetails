@@ -274,6 +274,30 @@ button{
     box-shadow:0 3px 8px rgba(214,0,0,.25);
 }
 
+.parameter-badge{
+    display:inline-block;
+    margin:8px 0 12px;
+    padding:6px 14px;
+    background:#1565c0;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    border-radius:20px;
+}
+
+
+.discount-badge{
+    background:linear-gradient(135deg,#ff4d4d,#d60000);
+    color:#fff;
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+    box-shadow:0 3px 8px rgba(214,0,0,.25);
+}
+
+
 
 </style>
 </head>
@@ -285,49 +309,52 @@ button{
 </header>
 
 <div class="container">
-
 <div class="package">
-<img src="master.png" alt="Master Health Checkup">
-<div>
-<h2>Master Health Checkup</h2>
-<p class="desc">Complete preventive health package for routine screening.</p>
+    <img src="master.png" alt="Master Health Checkup">
+
+    <div>
+        <h2>Master Health Checkup</h2>
+        <p class="desc">Complete preventive health package for routine screening.</p>
+
+        <div class="price-wrap">
+            <div class="price-card">
+
+                <div class="parameter-badge">
+                    62 Parameters
+                </div>
+
+                <div class="price">
+                    ₹1499
+                </div>
 
 
-<div class="price-wrap">
-<div class="price-card">
-<h4>WITHOUT TFT</h4>
-<div class="price">₹1460</div>
-<small>CBC, FBS, LFT, KFT, Lipid, Urine Routine</small>
-<small class="price-offer">
-    <span class="mrp-price">MRP ₹2920</span>
-    <span class="divider">|</span>
-    <span class="discount-badge">50% OFF</span>
-</small>
-</div>
-<div class="price-card">
-<h4>WITH TFT</h4>
-<div class="price">₹1760</div>
-<small>Includes T3, T4 & TSH</small>
-<small class="price-offer">
-    <span class="mrp-price">MRP ₹3520</span>
-    <span class="divider">|</span>
-    <span class="discount-badge">50% OFF</span>
-</small>
-</div>
-</div>
+                <small class="price-offer">
+                    <span class="mrp-price">MRP ₹2998</span>
+                    <span class="divider">|</span>
+                    <span class="discount-badge">50% OFF</span>
+                </small>
 
-<div class="tests">
-<span>CBC</span><span>FBS</span><span>LFT</span><span>KFT</span>
-<span>Lipid</span><span>Urine Routine</span><span>TFT</span>
-</div>
+            </div>
+        </div>
 
-<div class="actions">
-<button onclick="toggleSection('master')">View Tests</button>
-</div>
+        <div class="tests">
+            <span>CBC WITH ESR</span>
+            <span>FBS</span>
+            <span>LFT</span>
+            <span>KFT</span>
+            <span>Lipid</span>
+            <span>Urine Routine</span>
+            <span>TFT</span>
+        </div>
 
-<div class="details" id="master">
-</div>
-</div>
+        <div class="actions">
+            <button onclick="toggleSection('master')">View Tests</button>
+        </div>
+
+        <div class="details" id="master">
+        </div>
+
+    </div>
 </div>
 
 <div class="package">
@@ -337,6 +364,11 @@ button{
     <div>
 
         <h2>Vitamin Health Checkup</h2>
+        <div class="parameter-badge">
+    29 Parameters
+</div>
+
+
 
         <p class="desc">
             Essential vitamin screening to identify deficiencies in Vitamin D,
@@ -349,12 +381,12 @@ button{
 
                 <h4>PACKAGE PRICE</h4>
 
-                <div class="price">
-                    ₹1329
-                </div>
+<div class="price">
+    ₹1299
+</div>
 
 <small class="price-offer">
-    <span class="mrp-price">MRP ₹2950</span>
+    <span class="mrp-price">MRP ₹2598</span>
     <span class="divider">|</span>
     <span class="discount-badge">50% OFF</span>
 </small>
@@ -363,15 +395,17 @@ button{
 
         </div>
 
-        <div class="tests">
+<div class="tests">
+    <span>CBC - Complete Blood Count</span>
+    <span>Vitamin D</span>
+    <span>Vitamin B12</span>
+    <span>Calcium</span>
+</div>
 
-            <span>Vitamin D</span>
+<div class="actions">
+<button onclick="toggleSection('vitamin')">View Tests</button>
+</div>
 
-            <span>Vitamin B12</span>
-
-            <span>Calcium</span>
-
-        </div>
 
         <div class="details" id="vitamin"></div>
 
@@ -381,10 +415,76 @@ button{
 
 
 <div class="details" id="vitamin"></div>
-</div>
+<div class="package">
+
+    <img src="senior.png" alt="Senior Citizen Health Package">
+
+    <div>
+
+        <h2>Senior Citizen Health Package</h2>
+
+        <div class="parameter-badge">
+            68 Parameters
+        </div>
+
+        <p class="desc">
+            A comprehensive preventive health checkup specially designed for senior citizens to monitor diabetes, heart health, kidney & liver function, thyroid, bone health, nutritional status, and overall wellness.
+
+        <div class="price-wrap">
+
+            <div class="price-card">
+
+                <h4>PACKAGE PRICE</h4>
+
+                <div class="price">
+                    ₹2000
+                </div>
+
+                <small class="price-offer">
+                    <span class="mrp-price">MRP ₹4000</span>
+                    <span class="divider">|</span>
+                    <span class="discount-badge">50% OFF</span>
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="tests">
+            <span>ESR</span>
+            <span>HbA1c</span>
+            <span>CBC</span>
+            <span>FBS</span>
+            <span>Lipid Profile</span>
+            <span>Vitamin D</span>
+            <span>Urine Routine</span>
+            <span>LFT</span>
+            <span>TFT</span>
+            <span>KFT</span>
+            <span>PSA (Prostate Specific Antigen)</span>
+            <span>Calcium</span>
+        </div>
+
+<p class="desc">
+    <strong>Includes PSA (Prostate Specific Antigen)</strong> – A blood test used to help screen for prostate cancer and detect other prostate conditions early, allowing timely medical evaluation when needed.
+</p>
+
+<p class="desc" style="margin-top:16px; font-weight:600; color:#0b5ed7;">
+    ✔ Package Price <strong>₹2500</strong> <span style="font-weight:400;">(Including PSA Screening)</span>
+</p>
+
+        <div class="actions">
+            <button onclick="toggleSection('senior')">View Tests</button>
+        </div>
+
+        <div class="details" id="senior"></div>
+
+    </div>
+
 </div>
 
 </div>
+
 
 <script>
 const masterData={
@@ -397,11 +497,75 @@ const masterData={
 "TFT":["T3","T4","TSH"]
 };
 
-const vitaminData={
-"Vitamin D":["25-Hydroxy Vitamin D"],
-"Vitamin B12":["Vitamin B12"],
-"Calcium":masterData["Calcium"]
+const vitaminData = {
+    "CBC": [
+        "Hemoglobin",
+        "RBC Count",
+        "WBC Count",
+        "Platelet Count",
+        "PCV",
+        "MCV",
+        "MCH",
+        "MCHC",
+        "RDW",
+        "MPV",
+        "Neutrophils",
+        "Lymphocytes",
+        "Monocytes",
+        "Eosinophils",
+        "Basophils"
+    ],
+    "Vitamin D": [
+        "25-Hydroxy Vitamin D"
+    ],
+    "Vitamin B12": [
+        "Vitamin B12"
+    ],
+    "Calcium": [
+        "Calcium"
+    ]
 };
+
+
+const seniorData = {
+
+    "ESR": [
+        "Erythrocyte Sedimentation Rate (ESR)"
+    ],
+
+    "HbA1c": [
+        "Glycosylated Hemoglobin (HbA1c)",
+        "Estimated Average Glucose (eAG)"
+    ],
+
+    "CBC": masterData["CBC"],
+
+    "FBS": masterData["FBS"],
+
+    "Lipid Profile": masterData["Lipid Profile"],
+
+    "Vitamin D": [
+        "25-Hydroxy Vitamin D"
+    ],
+
+    "Urine Routine": masterData["Urine Routine"],
+
+    "LFT": masterData["LFT"],
+
+    "TFT": masterData["TFT"],
+
+    "KFT": masterData["KFT"],
+
+    "PSA": [
+        "Prostate Specific Antigen (PSA)"
+    ],
+
+    "Calcium": [
+        "Calcium"
+    ]
+
+};
+
 
 function build(id,data){
  const c=document.getElementById(id);
@@ -425,8 +589,9 @@ function toggleBody(el){
  b.style.display=open?"none":"block";
  s.textContent=open?"+":"−";
 }
-build("master",masterData);
-build("vitamin",vitaminData);
+build("master", masterData);
+build("vitamin", vitaminData);
+build("senior", seniorData);
 </script>
 </body>
 </html>

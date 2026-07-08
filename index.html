@@ -297,7 +297,62 @@ button{
     box-shadow:0 3px 8px rgba(214,0,0,.25);
 }
 
+/* ==========================
+   UPDATE POPUP
+========================== */
 
+#updatePopup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:99999;
+}
+
+.update-box{
+    width:380px;
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.update-box h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.update-box p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.popup-buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.popup-buttons button{
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.popup-buttons button:first-child{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.later-btn{
+    background:#eee !important;
+    color:#333 !important;
+}
 
 </style>
 </head>
@@ -510,6 +565,24 @@ button{
 
 </div>
 
+<div id="updatePopup">
+    <div class="update-box">
+
+        <h3>📢 New Content Available</h3>
+
+        <p>
+            Prices or package details have been updated.
+            Refresh to view the latest content.
+        </p>
+
+        <div class="popup-buttons">
+            <button onclick="location.reload()">Refresh Now</button>
+            <button class="later-btn" onclick="closeUpdatePopup()">Later</button>
+        </div>
+
+    </div>
+</div>
+
 
 <script>
 const masterData={
@@ -617,6 +690,53 @@ function toggleBody(el){
 build("master", masterData);
 build("vitamin", vitaminData);
 build("senior", seniorData);
+
+
+let currentVersion = null;
+
+async function checkVersion() {
+
+    try {
+
+        const response = await fetch("version.json?t=" + Date.now());
+
+        const data = await response.json();
+
+        if (currentVersion === null) {
+
+            currentVersion = data.version;
+            return;
+
+        }
+
+        if (data.version !== currentVersion) {
+
+            document.getElementById("updatePopup").style.display = "flex";
+
+        }
+
+    } catch (e) {
+
+        console.log("Version check failed");
+
+    }
+
+}
+
+function closeUpdatePopup(){
+
+    document.getElementById("updatePopup").style.display="none";
+
+}
+
+checkVersion();
+
+setInterval(checkVersion,30000);
+
+
 </script>
+
+
+
 </body>
 </html>
